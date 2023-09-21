@@ -35,7 +35,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 600px;
-  margin: 50px 0 50px 0;
+  margin: 50px 100px 50px 100px;
 }
 
 .pic-div {
@@ -49,6 +49,11 @@ section {
 
 .heading {
   text-transform: uppercase;
+}
+
+.paragragh-div {
+	padding: 50px;
+	font-size: 20px;
 }
 
 </style>
