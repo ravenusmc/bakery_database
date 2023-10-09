@@ -1,7 +1,8 @@
 # Bakery_Database
 ## Intro
 
-The point of this system is to get a little tracking system going that a bakery or another type of store could use to track what it sells. I don't think that this project will get to big and something to work on as I continue working on more Udemy courses. 
+The point of this system is to get a little tracking system going that a bakery or another type of store could use to track what it sells. I don't think that this project will get to big and something to work on as I continue working on more Udemy courses. Well see how this project develops over time. It could actually become something bigger than 
+what I imagine.
 
 
 # Getting started
