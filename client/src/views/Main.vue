@@ -12,8 +12,5 @@
 
 export default {
   name: 'Main',
-  // components: {
-  //   Top
-  // }
 }
 </script>
