@@ -1,7 +1,15 @@
 <template>
   <div>
     <section>
-      <div></div>
+      <div>
+        <h1>Current Inventory:</h1>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Amount</th>
+          </tr>
+        </table>
+      </div>
     </section>
   </div>
 </template>
@@ -14,3 +22,12 @@ export default {
   name: 'Main',
 }
 </script>
+
+<style scoped>
+
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+</style>
