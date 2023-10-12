@@ -18,6 +18,8 @@
 // @ is an alias to /src
 // import Top from '@/components/landing/Top.vue'
 
+// USE https://github.com/ravenusmc/work_data_entry_tool/blob/main/server/SQL/tables.sql for reference
+
 export default {
   name: 'Main',
 }
