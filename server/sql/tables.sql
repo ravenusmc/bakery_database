@@ -2,6 +2,7 @@ CREATE DATABASE bakery;
 
 use bakery;
 
+--Users Table
 CREATE TABLE users
 (
   user_id INT NOT NULL AUTO_INCREMENT,
@@ -13,6 +14,7 @@ CREATE TABLE users
   PRIMARY KEY(user_id)
 );
 
+--Goods table 
 CREATE TABLE goods
 (
   good_id INT NOT NULL AUTO_INCREMENT,
