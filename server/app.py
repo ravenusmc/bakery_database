@@ -1,5 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+
+# Importing files that I created for the project
+from db import *
 
 
 # instantiate the app
@@ -9,10 +12,16 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
-# sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
+
+# May need to get rid of methods here and only use post
+@app.route('/submitSalesDataToDatabase', methods=['GET', 'POST'])
+def submit_sales_data_to_database():
+    if request.method == 'POST':
+        # db = Connection()
+        post_data = request.get_json()
+        print(post_data)
+        # db.submitAction(post_data)
+    return jsonify('5')
 
 if __name__ == '__main__':
     app.run()
