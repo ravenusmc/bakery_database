@@ -17,11 +17,10 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 @app.route('/submitSalesDataToDatabase', methods=['GET', 'POST'])
 def submit_sales_data_to_database():
     if request.method == 'POST':
-        # db = Connection()
+        db = Connection()
         post_data = request.get_json()
-        print(post_data)
-        # db.submitAction(post_data)
-    return jsonify('5')
+        item_inserted = db.enter_sold_goods_into_database(post_data)
+    return jsonify(item_inserted)
 
 if __name__ == '__main__':
     app.run()
