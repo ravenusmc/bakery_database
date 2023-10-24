@@ -19,8 +19,8 @@ class Connection():
     def get_goods_from_db(self):
         query = ("""SELECT * FROM goods""")
         self.cursor.execute(query,)
-        row = self.cursor.fetchall()
-        print(row)
+        returned_data = self.cursor.fetchall()
+        return returned_data
     
     def enter_sold_goods_into_database(self, post_data):
         self._SQL = """insert into goods
@@ -30,7 +30,6 @@ class Connection():
         self.cursor.execute(self._SQL, (post_data['item'],
                             post_data['amount'], post_data['date']))
         self.conn.commit()
-        print("YAY")
         item_inserted = True
         return item_inserted
 

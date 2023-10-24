@@ -13,7 +13,13 @@ app.config.from_object(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 
-# May need to get rid of methods here and only use post
+@app.route('/fetchDatabaseData', methods=['GET', 'POST'])
+def fetchDatabaseData():
+    if request.method == 'POST':
+        db = Connection()
+        returned_data = db.get_goods_from_db()
+    return jsonify(returned_data)
+
 @app.route('/submitSalesDataToDatabase', methods=['GET', 'POST'])
 def submit_sales_data_to_database():
     if request.method == 'POST':
