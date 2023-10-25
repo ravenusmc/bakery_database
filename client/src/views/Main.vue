@@ -2,6 +2,9 @@
   <div>
     <section>
       <div>
+        <DataTable/>
+      </div>
+      <div>
         <h1>Sold Amount</h1>
         <form @submit="submitAmountSold">
           <label for="item">Item name:</label><br />
@@ -24,10 +27,6 @@
           /><br /><br />
           <input type="submit" value="Submit" />
         </form>
-      </div>
-
-      <div>
-        <DataTable/>
       </div>
     </section>
   </div>
@@ -72,8 +71,8 @@ export default {
 </script>
 
 <style scoped>
-th {
-  font-weight: bold;
-  text-transform: uppercase;
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 </style>
