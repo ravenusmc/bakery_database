@@ -27,17 +27,7 @@
       </div>
 
       <div>
-        <h1>Current Inventory:</h1>
-        <table>
-          <tr>
-            <th>item</th>
-            <th>Amount</th>
-          </tr>
-          <tr v-for="item in currentInventory">
-            <td>{{ item[1] }}</td>
-            <td>{{ item[2] }}</td>
-          </tr>
-        </table>
+        <DataTable/>
       </div>
     </section>
   </div>
@@ -45,12 +35,14 @@
 
 <script>
 // @ is an alias to /src
-// import Top from '@/components/landing/Top.vue'
-
+import DataTable from '@/components/main/DataTable.vue'
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Main",
+  components: {
+    DataTable
+  },
   data() {
     return {
       item: "",
