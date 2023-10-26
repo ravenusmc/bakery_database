@@ -22,6 +22,12 @@ class Connection():
         returned_data = self.cursor.fetchall()
         return returned_data
     
+    def get_unique_goods_from_db(self):
+        query = ("""SELECT DISTINCT good_name FROM goods""")
+        self.cursor.execute(query,)
+        unique_good_names = self.cursor.fetchall()
+        return unique_good_names
+    
     def enter_sold_goods_into_database(self, post_data):
         self._SQL = """insert into goods
         (good_name, amount, date_stamp)

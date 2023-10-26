@@ -19,6 +19,7 @@ const actions = {
 		const path = 'http://localhost:5000/fetchDatabaseData';
 		axios.post(path)
 			.then((res) => {
+				console.log(res.data)
 				commit('setCurrentInventory', res.data);
 			})
 			.catch((error) => {

@@ -12,12 +12,13 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
-
 @app.route('/fetchDatabaseData', methods=['GET', 'POST'])
 def fetchDatabaseData():
     if request.method == 'POST':
         db = Connection()
         returned_data = db.get_goods_from_db()
+        unique_good_names = db.get_unique_goods_from_db()
+        print(unique_good_names)
     return jsonify(returned_data)
 
 @app.route('/submitSalesDataToDatabase', methods=['GET', 'POST'])
