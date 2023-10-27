@@ -50,7 +50,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("data", ["currentInventory"]),
+    ...mapGetters("data", ["currentInventory", "uniqueGoods"]),
   },
   methods: {
     ...mapActions("data", ["fetchAllData", "submitDaySalesToDataBase"]),

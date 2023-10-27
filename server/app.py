@@ -18,8 +18,10 @@ def fetchDatabaseData():
         db = Connection()
         returned_data = db.get_goods_from_db()
         unique_good_names = db.get_unique_goods_from_db()
-        print(unique_good_names)
-    return jsonify(returned_data)
+        data_holder = []
+        data_holder.append(returned_data)
+        data_holder.append(unique_good_names)
+    return jsonify(data_holder)
 
 @app.route('/submitSalesDataToDatabase', methods=['GET', 'POST'])
 def submit_sales_data_to_database():

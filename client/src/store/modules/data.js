@@ -7,10 +7,12 @@ Vue.use(Vuex);
 
 const data = {
 	currentInventory: [],
+	uniqueGoods: [],
 };
 
 const getters = {
 	currentInventory: (state) => state.currentInventory,
+	uniqueGoods: (state) => state.uniqueGoods,
 };
 
 const actions = {
@@ -19,8 +21,8 @@ const actions = {
 		const path = 'http://localhost:5000/fetchDatabaseData';
 		axios.post(path)
 			.then((res) => {
-				console.log(res.data)
-				commit('setCurrentInventory', res.data);
+				commit('setCurrentInventory', res.data[0]);
+				commit('setUniqueGoods', res.data[1])
 			})
 			.catch((error) => {
 				console.log(error);
@@ -46,6 +48,10 @@ const mutations = {
 	setCurrentInventory(state, value) {
 		state.currentInventory = value;
 	},
+
+	setUniqueGoods(state, value) {
+		state.uniqueGoods = value;
+	}
 
 };
 
